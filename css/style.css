@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  background:
+    linear-gradient(rgba(21, 65, 240, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/bg-desktop-light.jpg);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* task  */
+.task{
+    text-decoration: none;
+    width: 30%;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 30px;
+}
+.ok{
+    background: #fff;
+    width: 14px;
+    height:14px;
+    border: solid 1px #000;
+    border-radius: 50%;
+    position: relative;
+    transform: translateX(-440px);
+}
+/* hidden */
+.hidden{
+    display: none;
+}

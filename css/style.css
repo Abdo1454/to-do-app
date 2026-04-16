@@ -16,13 +16,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
+  align-items: center;
+  /* align-items: center; */
+  gap: 60px;
 }
 .header {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
   color: #fff;
+  gap: 100px;
 }
 .list {
   display: flex;
@@ -31,8 +34,10 @@
 }
 /* task  */
 .task{
+
     text-decoration: none;
-    width: 30%;
+    width: 40%;
+    width: 200%;
     height: 40px;
     border-radius: 5px;
     padding-left: 30px;
@@ -44,9 +49,37 @@
     border: solid 1px #000;
     border-radius: 50%;
     position: relative;
-    transform: translateX(-440px);
+    transform: translateX(-190px);
 }
 /* hidden */
 .hidden{
     display: none;
+}
+.result{
+
+height: 200px;
+text-align: center;
+
+}
+.list-task{
+  background: #fff;
+width: 300px;
+height: 35px;
+display: flex;
+justify-content: space-around;
+gap: 20px;
+}
+.del{
+  background: none;
+  border: none;
+}
+.check-list{
+      background: #fff;
+    width: 14px;
+    height:14px;
+    border: solid 2px #000;
+    border-radius: 50%;
+}
+.font{
+  font-size: 26px;
 }

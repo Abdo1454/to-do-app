@@ -37,7 +37,7 @@
 
     text-decoration: none;
     width: 40%;
-    width: 200%;
+    width: 300px;
     height: 40px;
     border-radius: 5px;
     padding-left: 30px;
@@ -49,21 +49,19 @@
     border: solid 1px #000;
     border-radius: 50%;
     position: relative;
-    transform: translateX(-190px);
+    transform: translateX(-290px);
 }
 /* hidden */
 .hidden{
     display: none;
 }
-.result{
-
+.result-page{
 height: 200px;
 text-align: center;
-
 }
 .list-task{
   background: #fff;
-width: 300px;
+width: 400px;
 height: 35px;
 display: flex;
 justify-content: space-around;
@@ -77,9 +75,34 @@ gap: 20px;
       background: #fff;
     width: 14px;
     height:14px;
-    border: solid 2px #000;
+    border: solid 1px #000;
     border-radius: 50%;
+}
+.check-list:hover{
+  border-color: rgb(85, 100, 232);
 }
 .font{
   font-size: 26px;
+}
+.icon-check{
+  background: rgb(63, 96, 218);
+  border-radius: 50%;
+width: 15px;
+height: 20px;
+}
+.choose{
+    background: #fff;
+    width: 400px;
+    height:20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+.choose:hover{
+  cursor: pointer;
+}
+.control{
+  display: flex;
+  gap: 10px;
 }

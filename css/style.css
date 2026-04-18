@@ -3,9 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-.container {
+.container-light {
   background:
-    linear-gradient(rgba(21, 65, 240, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(to right ,  rgba(215, 24, 232, 0.392) 30% , rgba(21, 65, 240, 0.54)),
     url(../images/bg-desktop-light.jpg);
 
   background-size: cover;
@@ -19,6 +19,27 @@
   align-items: center;
   /* align-items: center; */
   gap: 60px;
+}
+
+.container-dark {
+  background:
+    linear-gradient(to right , rgba(73, 106, 235, 0.5), rgba(186, 51, 175, 0.5)),
+    url(../images/bg-desktop-dark.jpg);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* align-items: center; */
+  gap: 60px;
+}
+.body-dark {
+  background: rgb(24 24 36);
 }
 .header {
   display: flex;

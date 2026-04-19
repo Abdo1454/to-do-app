@@ -5,42 +5,50 @@ let doneResult = document.getElementById("done-result");
 let resultPage = document.querySelector(".result-page");
 let numTasks = document.getElementById("num-tasks");
 let btnMode = document.getElementById("btn-mode");
-// let mode=document.getElementById("mode");
 let currentModeAll = document.getElementById("current-mode");
-let currentMode = localStorage.getItem("mode") || "light";
-// let btnMode = localStorage.getItem("modee") || "";
+let choose=document.getElementById("choose");
+// let idList=document.querySelectors(".id-list")
 
-// أول تحميل
-if (currentMode === "dark") {
-  currentModeAll.classList.add("container-dark");
-  document.body.classList.add("body-dark");
-} else {
-  currentModeAll.classList.add("container-light");
+// جلب الوضع من localStorage أو الافتراضي light
+let currentMode = localStorage.getItem("mode") || "light";
+
+// 🔥 function واحدة تتحكم في كل حاجة
+function applyMode(mode) {
+  if (mode === "dark") {
+    currentModeAll.classList.remove("container-light");
+    resultPage.classList.remove("list-task");
+    choose.classList.remove("choose-light");
+    resultPage.classList.add("list-dark");
+    choose.classList.add("choose-dark");
+    currentModeAll.classList.add("container-dark");
+    document.body.classList.add("body-dark");
+    btnMode.setAttribute("src", "images/icon-sun.svg");
+  } else {
+    currentModeAll.classList.remove("container-dark");
+    resultPage.classList.remove("list-dark");
+    choose.classList.remove("choose-dark");
+    choose.classList.add("choose-light");
+    resultPage.classList.add("list-task");
+    currentModeAll.classList.add("container-light");
+    document.body.classList.remove("body-dark");
+    btnMode.setAttribute("src", "images/icon-moon.svg");
+  }
 }
 
+// تطبيق الوضع عند تحميل الصفحة
+applyMode(currentMode);
+
+// تغيير الوضع عند الضغط
 btnMode.addEventListener("click", changeMode);
 
 function changeMode() {
-  if (currentMode === "light") {
-    currentMode = "dark";
+  currentMode = currentMode === "light" ? "dark" : "light";
 
-    currentModeAll.classList.remove("container-light");
-    currentModeAll.classList.add("container-dark");
-    document.body.classList.add("body-dark");
-    btnMode.setAttribute("src","images/icon-sun.svg")
-  } else {
-    currentMode = "light";
+  applyMode(currentMode);
 
-    currentModeAll.classList.remove("container-dark");
-    currentModeAll.classList.add("container-light");
-    document.body.classList.remove("body-dark");
-    btnMode.setAttribute("src","images/icon-moon.svg")
-
-  }
-
-  localStorage.setItem("mode", currentMode); // 🔥 حفظ الوضع
+  // حفظ الوضع
+  localStorage.setItem("mode", currentMode);
 }
-
 form.addEventListener("submit", addTask);
 let currentView = "all";
 function addTask(event) {
@@ -75,7 +83,7 @@ function render() {
     result.innerHTML = "";
     displayDoneTask();
   }
-  if (tasks.length == 0 && doneTask.length == 0) {
+  if (tasks.length == 0 && doneTasks.length == 0) {
     resultPage.classList.add("hidden");
   } else {
     resultPage.classList.remove("hidden");
@@ -89,7 +97,7 @@ function displayTask() {
   result.innerHTML = tasks
     .map(
       (t, index) =>
-        `<li class="list-task" > <p class="check-list" data-done= "${index}">  </p>  <p class="font"> ${t} </P>
+        `<li class="list-task" class="id-list" > <p class="check-list" data-done= "${index}">  </p>  <p class="font"> ${t} </P>
         <button class="del" data-del="${index}" ><img src="images/icon-cross.svg" /> </button>  </li>`,
     )
     .join("");

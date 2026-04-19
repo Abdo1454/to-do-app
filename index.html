@@ -1,46 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
     <title>TO DO App</title>
-</head>
-<body>
- 
-       <main class="container-light" id="current-mode">
-    <div class="header">
+  </head>
+  <body>
+    <main class="container-light" id="current-mode">
+      <div class="header">
         <h1>TO DO</h1>
-        <img src="images/icon-moon.svg" alt="mode" id="btn-mode">
-    </div>
+        <img src="images/icon-moon.svg" alt="mode" id="btn-mode" />
+      </div>
 
-    <form class="list">
-        <input type="text" id="task" class="task" placeholder="create a new todo...">
+      <form class="list">
+        <input
+          type="text"
+          id="task"
+          class="task"
+          placeholder="create a new todo..."
+        />
         <button type="submit" id="btn-task" class="ok"></button>
-    </form>
+      </form>
 
-    <div class="result-page hidden">
+      <div class="result-page hidden">
         <ul id="done-result"></ul>
         <ul id="result"></ul>
 
-        <div class="choose">
-            <p id="num-tasks"></p>
+        <div id="choose" class="choose-light">
+          <p id="num-tasks"></p>
 
-            <div class="control">
-                <p id="all-items">All</p>
-                <p id="active">Active</p>
-                <p id="completed">Completed</p>
-            </div>
+          <div class="control">
+            <p id="all-items">All</p>
+            <p id="active">Active</p>
+            <p id="completed">Completed</p>
+          </div>
 
-            <p id="btn-clear">Clear</p>
+          <p id="btn-clear">Clear</p>
         </div>
-    </div>
-</main>
-
-
-
+      </div>
+    </main>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
